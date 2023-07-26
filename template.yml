@@ -1,24 +1,23 @@
----
-  #$schema: "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#"
-  contentVersion: "1.0.0.0"
+  #Schema link: https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#"
+  contentVersion: 1.0.0.0
   parameters: 
     vulnerabilityAssessments_Default_storageContainerPath: 
-      type: "SecureString"
+      type: SecureString
     servers_linktechdbserver_name: 
       defaultValue: "linktechdbserver"
-      type: "String"
+      type: String
     staticSites_LinkTech_WebApp_name: 
       defaultValue: "LinkTech-WebApp"
-      type: "String"
+      type: String
     virtualNetworks_azce_prd_spk_LinkTech_vnet_name: 
       defaultValue: "azce-prd-spk-LinkTech-vnet"
-      type: "String"
+      type: String
     networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name: 
       defaultValue: "azce-prd-spk-LinkTech-nsg"
-      type: "String"
+      type: String
     virtualNetworks_azce_prd_hub_LinkTech_vnet_externalid: 
       defaultValue: "/subscriptions/c23271e6-01ae-4dfa-85d3-783bf6dfa210/resourceGroups/azce-prd-hub-LinkTech-RG/providers/Microsoft.Network/virtualNetworks/azce-prd-hub-LinkTech-vnet"
-      type: "String"
+      type: String
   variables: {}
   resources: 
     - 
