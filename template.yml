@@ -21,7 +21,7 @@
   variables: {}
   resources: 
     - 
-      type: "Microsoft.Network/networkSecurityGroups"
+      type: Microsoft.Network/networkSecurityGroups
       apiVersion: "2022-11-01"
       name: "[parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name')]"
       location: "canadaeast"
@@ -30,7 +30,7 @@
           - 
             name: "AllowCustomVNetInBound"
             id: "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), 'AllowCustomVNetInBound')]"
-            type: "Microsoft.Network/networkSecurityGroups/securityRules"
+            type: Microsoft.Network/networkSecurityGroups/securityRules
             properties: 
               protocol: "*"
               sourcePortRange: "*"
@@ -47,7 +47,7 @@
           - 
             name: "AllowCustomAzureLoadBalancerInBound"
             id: "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), 'AllowCustomAzureLoadBalancerInBound')]"
-            type: "Microsoft.Network/networkSecurityGroups/securityRules"
+            type: Microsoft.Network/networkSecurityGroups/securityRules
             properties: 
               protocol: "*"
               sourcePortRange: "*"
@@ -64,7 +64,7 @@
           - 
             name: "AllowAnyHTTPInbound"
             id: "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), 'AllowAnyHTTPInbound')]"
-            type: "Microsoft.Network/networkSecurityGroups/securityRules"
+            type: Microsoft.Network/networkSecurityGroups/securityRules
             properties: 
               protocol: "TCP"
               sourcePortRange: "*"
@@ -81,7 +81,7 @@
           - 
             name: "AllowAnyHTTPSInbound"
             id: "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), 'AllowAnyHTTPSInbound')]"
-            type: "Microsoft.Network/networkSecurityGroups/securityRules"
+            type: Microsoft.Network/networkSecurityGroups/securityRules
             properties: 
               protocol: "TCP"
               sourcePortRange: "*"
@@ -96,7 +96,7 @@
               sourceAddressPrefixes: []
               destinationAddressPrefixes: []
     - 
-      type: "Microsoft.Network/virtualNetworks"
+      type: Microsoft.Network/virtualNetworks
       apiVersion: "2022-11-01"
       name: "[parameters('virtualNetworks_azce_prd_spk_LinkTech_vnet_name')]"
       location: "canadaeast"
@@ -115,7 +115,7 @@
               delegations: []
               privateEndpointNetworkPolicies: "Disabled"
               privateLinkServiceNetworkPolicies: "Enabled"
-            type: "Microsoft.Network/virtualNetworks/subnets"
+            type: Microsoft.Network/virtualNetworks/subnets
         virtualNetworkPeerings: 
           - 
             name: "ProdSpoke-to-Hub"
@@ -136,10 +136,10 @@
               remoteVirtualNetworkAddressSpace: 
                 addressPrefixes: 
                   - "10.0.0.0/16"
-            type: "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+            type: Microsoft.Network/virtualNetworks/virtualNetworkPeerings
         enableDdosProtection: false
     - 
-      type: "Microsoft.Sql/servers"
+      type: Microsoft.Sql/servers
       apiVersion: "2022-11-01-preview"
       name: "[parameters('servers_linktechdbserver_name')]"
       location: "canadaeast"
@@ -151,7 +151,7 @@
         publicNetworkAccess: "Enabled"
         restrictOutboundNetworkAccess: "Disabled"
     - 
-      type: "Microsoft.Web/staticSites"
+      type: Microsoft.Web/staticSites
       apiVersion: "2022-09-01"
       name: "[parameters('staticSites_LinkTech_WebApp_name')]"
       location: "Central US"
@@ -168,7 +168,7 @@
         provider: "GitHub"
         enterpriseGradeCdnStatus: "Disabled"
     - 
-      type: "Microsoft.Network/networkSecurityGroups/securityRules"
+      type: Microsoft.Network/networkSecurityGroups/securityRules
       apiVersion: "2022-11-01"
       name: "[concat(parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), '/AllowAnyHTTPInbound')]"
       dependsOn: 
@@ -187,7 +187,7 @@
         sourceAddressPrefixes: []
         destinationAddressPrefixes: []
     - 
-      type: "Microsoft.Network/networkSecurityGroups/securityRules"
+      type: Microsoft.Network/networkSecurityGroups/securityRules
       apiVersion: "2022-11-01"
       name: "[concat(parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), '/AllowAnyHTTPSInbound')]"
       dependsOn: 
@@ -206,7 +206,7 @@
         sourceAddressPrefixes: []
         destinationAddressPrefixes: []
     - 
-      type: "Microsoft.Network/networkSecurityGroups/securityRules"
+      type: Microsoft.Network/networkSecurityGroups/securityRules
       apiVersion: "2022-11-01"
       name: "[concat(parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), '/AllowCustomAzureLoadBalancerInBound')]"
       dependsOn: 
@@ -225,7 +225,7 @@
         sourceAddressPrefixes: []
         destinationAddressPrefixes: []
     - 
-      type: "Microsoft.Network/networkSecurityGroups/securityRules"
+      type: Microsoft.Network/networkSecurityGroups/securityRules
       apiVersion: "2022-11-01"
       name: "[concat(parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name'), '/AllowCustomVNetInBound')]"
       dependsOn: 
@@ -244,7 +244,7 @@
         sourceAddressPrefixes: []
         destinationAddressPrefixes: []
     - 
-      type: "Microsoft.Network/virtualNetworks/subnets"
+      type: Microsoft.Network/virtualNetworks/subnets
       apiVersion: "2022-11-01"
       name: "[concat(parameters('virtualNetworks_azce_prd_spk_LinkTech_vnet_name'), '/default')]"
       dependsOn: 
@@ -277,7 +277,7 @@
           addressPrefixes: 
             - "10.0.0.0/16"
     - 
-      type: "Microsoft.Sql/servers/advancedThreatProtectionSettings"
+      type: Microsoft.Sql/servers/advancedThreatProtectionSettings
       apiVersion: "2022-11-01-preview"
       name: "[concat(parameters('servers_linktechdbserver_name'), '/Default')]"
       dependsOn: 
