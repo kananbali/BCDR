@@ -24,7 +24,7 @@ resources:
 - type: Microsoft.Network/networkSecurityGroups
   apiVersion: '2022-11-01'
   name: "[parameters('networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name')]"
-  location: canadaeast
+  location: canadacentral
   properties:
     securityRules:
     - name: AllowCustomVNetInBound
@@ -98,7 +98,7 @@ resources:
 - type: Microsoft.Network/virtualNetworks
   apiVersion: '2022-11-01'
   name: "[parameters('virtualNetworks_azce_prd_spk_LinkTech_vnet_name')]"
-  location: canadaeast
+  location: canadacentral
   tags:
     Production Spoke VNet: ''
   properties:
@@ -140,7 +140,7 @@ resources:
 - type: Microsoft.Sql/servers
   apiVersion: 2022-11-01-preview
   name: "[parameters('servers_linktechdbserver_name')]"
-  location: canadaeast
+  location: canadacentral
   kind: v12.0
   properties:
     administratorLogin: cisco
@@ -316,7 +316,7 @@ resources:
 - type: Microsoft.Sql/servers/auditingPolicies
   apiVersion: '2014-04-01'
   name: "[concat(parameters('servers_linktechdbserver_name'), '/Default')]"
-  location: Canada East
+  location: Canada Central
   dependsOn:
   - "[resourceId('Microsoft.Sql/servers', parameters('servers_linktechdbserver_name'))]"
   properties:
@@ -337,7 +337,7 @@ resources:
 - type: Microsoft.Sql/servers/connectionPolicies
   apiVersion: 2022-11-01-preview
   name: "[concat(parameters('servers_linktechdbserver_name'), '/default')]"
-  location: canadaeast
+  location: canadacentral
   dependsOn:
   - "[resourceId('Microsoft.Sql/servers', parameters('servers_linktechdbserver_name'))]"
   properties:
@@ -345,7 +345,7 @@ resources:
 - type: Microsoft.Sql/servers/databases
   apiVersion: 2022-11-01-preview
   name: "[concat(parameters('servers_linktechdbserver_name'), '/LinkTechDB')]"
-  location: canadaeast
+  location: canadacentral
   dependsOn:
   - "[resourceId('Microsoft.Sql/servers', parameters('servers_linktechdbserver_name'))]"
   sku:
@@ -373,7 +373,7 @@ resources:
 - type: Microsoft.Sql/servers/databases/auditingPolicies
   apiVersion: '2014-04-01'
   name: "[concat(parameters('servers_linktechdbserver_name'), '/master/Default')]"
-  location: Canada East
+  location: Canada Central
   dependsOn:
   - "[resourceId('Microsoft.Sql/servers', parameters('servers_linktechdbserver_name'))]"
   properties:
@@ -573,7 +573,7 @@ resources:
 - type: Microsoft.Sql/servers/databases/auditingPolicies
   apiVersion: '2014-04-01'
   name: "[concat(parameters('servers_linktechdbserver_name'), '/LinkTechDB/Default')]"
-  location: Canada East
+  location: Canada Central
   dependsOn:
   - "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_linktechdbserver_name'),
     'LinkTechDB')]"
