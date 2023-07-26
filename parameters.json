@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "servers_linktechdbserver_name": {
+            "value": null
+        },
+        "staticSites_LinkTech_WebApp_name": {
+            "value": null
+        },
+        "virtualNetworks_azce_prd_spk_LinkTech_vnet_name": {
+            "value": null
+        },
+        "networkSecurityGroups_azce_prd_spk_LinkTech_nsg_name": {
+            "value": null
+        },
+        "virtualNetworks_azce_prd_hub_LinkTech_vnet_externalid": {
+            "value": null
+        }
+    }
+}
