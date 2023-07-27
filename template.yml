@@ -21,7 +21,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'LinkTech-Prod-Sub'  # Replace with the name of your Azure service connection.
+    azureResourceManagerConnection: 'LinkTech-Service-Connection'  # Replace with the name of your Azure service connection.
     subscriptionId: 'c23271e6-01ae-4dfa-85d3-783bf6dfa210'  # Replace with your Azure subscription ID.
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'azcc-prd-spk-LinkTech-RG'  # Replace with the name of the resource group you want to create or update.
