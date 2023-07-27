@@ -10,7 +10,7 @@ resources:
   repositories:
     - repository: BCDR  # The name of the repository resource
       type: git
-      name: BCDR  # The name of your Azure DevOps repository
+      name: LinkTech-ARM  # The name of your Azure DevOps repository
       ref: main  # The branch from which you want to pick the file (main in this case)
 
 steps:
