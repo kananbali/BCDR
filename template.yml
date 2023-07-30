@@ -39,4 +39,5 @@ steps:
     resourceGroupName: 'azce-prd-spk-LinkTech-RG'
     location: 'Canada Central'
     templateLocation: 'Linked artifact'
+    csmFile: '$(Pipeline.Workspace)/BCDR/template.json'
     deploymentMode: 'Incremental'
