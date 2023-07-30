@@ -29,6 +29,13 @@
     "variables": {},
     "resources": [
         {
+      "type": "Microsoft.Resources/resourceGroups",
+      "apiVersion": "2021-04-01",
+      "name": "MyNewResourceGroup",
+      "location": "canadacentral",
+      "properties": {}
+    },
+        {
             "type": "Microsoft.Network/networkSecurityGroups",
             "apiVersion": "2022-11-01",
             "name": "[parameters('networkSecurityGroups_azcc_prd_spk_LinkTech_nsg_name')]",
