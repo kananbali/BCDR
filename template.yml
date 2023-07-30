@@ -28,4 +28,4 @@ steps:
     location: 'Canada Central'  # Replace with your desired Azure region.
     templateLocation: 'Linked artifact'
     csmFile: '$(Pipeline.Workspace)/BCDR/template.json'  # The path to the template.json file in the BCDR repository
-    deploymentMode: 'Complete'  # Change to 'Complete' if you want to overwrite the resource group.
+    deploymentMode: 'Incremental'  # Change to 'Complete' if you want to overwrite the resource group.
