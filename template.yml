@@ -25,7 +25,7 @@ steps:
     azureResourceManagerConnection: 'LinkTech-Service-Connection'  # Replace with the name of your Azure service connection.
     subscriptionId: 'c23271e6-01ae-4dfa-85d3-783bf6dfa210'  # Replace with your Azure subscription ID.
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'azcc-prd-spk-LinkTech-RG'  # Replace with the name of the resource group you want to create or update.
+    resourceGroupName: 'azce-prd-spk-LinkTech-RG'  # Replace with the name of the resource group you want to create or update.
     location: 'Canada Central'  # Replace with your desired Azure region.
     templateLocation: 'Linked artifact'
     csmFile: '$(Pipeline.Workspace)/BCDR/template.json'  # The path to the template.json file in the BCDR repository
